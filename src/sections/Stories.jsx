@@ -26,7 +26,7 @@ export default function Stories({ filter, onFilterChange, onStorySelect }) {
       </div>
       <section className="privacy-consent-section">
         <h3>Privacy &amp; Consent</h3>
-        <p>All participants are anonymised by default. Names, locations, and identifying details are changed before publication. Participation is voluntary and may be withdrawn at any time.</p>
+        <p>All stories in this archive are published with the knowledge and consent of the people who shared them. Real names, specific locations, workplaces, and other identifying details have been changed or removed to protect participant privacy. No story is published in a form that could identify the individual who shared it.</p>
       </section>
       <div className="archive-controls">
         {themes.map((theme) => (

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Label from '../components/Label.jsx';
 import { valueOrFallback } from '../utils/mailto.js';
 
-const initialForm = { name: '', age: '', city: '', language: '', decision: '', difficult: '', influence: '', interview: 'Yes, happy to be contacted', consent: false };
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgzwgwv';
+const initialForm = { name: '', age: '', city: '', language: '', decision: '', difficult: '', influence: '', interview: 'Yes, happy to be contacted', consent: false, gotcha: '' };
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mqenvayg';
 
 export default function ShareStory() {
   const [form, setForm] = useState(initialForm);
@@ -63,6 +63,9 @@ export default function ShareStory() {
           Accept: 'application/json',
         },
         body: JSON.stringify({
+          _gotcha: form.gotcha,
+          _subject: 'New Share Your Story Submission',
+          source: 'share_story',
           subject: 'Story submission — Between Care and Uncertainty',
           name: valueOrFallback(form.name),
           age: valueOrFallback(form.age),
@@ -108,6 +111,7 @@ export default function ShareStory() {
       </div>
       <div className="share-story-form-panel">
         <form className="form-card share-story-form-card" onSubmit={submit}>
+          <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex="-1" autoComplete="off" value={form.gotcha} onChange={(e) => update('gotcha', e.target.value)} />
           <div className="form-row">
             <div className="form-field"><label>First name or nickname</label><input type="text" value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="e.g. Amina, or leave blank" /></div>
             <div className="form-field"><label>Age range</label><select value={form.age} onChange={(e) => update('age', e.target.value)} required><option value="">Select…</option><option>18–25</option><option>26–35</option><option>36–50</option><option>51–65</option><option>65+</option></select></div>

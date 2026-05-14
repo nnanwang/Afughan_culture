@@ -6,6 +6,9 @@ export default function About() {
         <h1 className="about-title">About the project</h1>
         <p className="about-intro">This is not a health campaign. It is a project about what it means to make a decision when your body, your family, and your uncertainty are all involved.</p>
       </header>
+      <figure className="about-map-figure" aria-hidden="true">
+        <img src="/image/jami-masjid-of-herat.jpg" alt="" />
+      </figure>
       <div className="about-layout">
         <div className="about-main">
         <div className="about-body">

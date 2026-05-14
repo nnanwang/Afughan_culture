@@ -2,8 +2,8 @@ import { useState } from 'react';
 import Label from '../components/Label.jsx';
 import { valueOrFallback } from '../utils/mailto.js';
 
-const initialForm = { name: '', contact: 'Phone call', language: '', city: '', decision: '', availability: '', consent: false };
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdwzygw';
+const initialForm = { name: '', contact: 'Phone call', language: '', city: '', decision: '', availability: '', consent: false, gotcha: '' };
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojrovko';
 
 export default function Interview() {
   const [form, setForm] = useState(initialForm);
@@ -56,6 +56,9 @@ export default function Interview() {
           Accept: 'application/json',
         },
         body: JSON.stringify({
+          _gotcha: form.gotcha,
+          _subject: 'New Interview Request',
+          source: 'request_interview',
           subject: 'Interview request — Between Care and Uncertainty',
           name: valueOrFallback(form.name),
           contact: valueOrFallback(form.contact),
@@ -98,6 +101,7 @@ export default function Interview() {
         </div>
         <div className="share-story-form-panel">
           <div className="form-card share-story-form-card">
+            <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex="-1" autoComplete="off" value={form.gotcha} onChange={(e) => update('gotcha', e.target.value)} />
             <div className="form-row">
               <div className="form-field"><label>First name or nickname</label><input type="text" value={form.name} onChange={(e) => update('name', e.target.value)} placeholder="e.g. Farid, or leave blank" /></div>
               <div className="form-field"><label>Preferred contact method</label><select value={form.contact} onChange={(e) => update('contact', e.target.value)}><option>Phone call</option><option>Video call (Zoom / Teams)</option><option>In person — Sydney</option><option>Email first, then arrange</option></select></div>

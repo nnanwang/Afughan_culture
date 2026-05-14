@@ -7,7 +7,7 @@ const stats = [
       </svg>
     ),
     tone: 'gold',
-    number: '24',
+    number: '29',
     label: 'interviews conducted',
   },
   {
