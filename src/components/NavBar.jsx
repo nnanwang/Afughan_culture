@@ -1,8 +1,8 @@
 const navItems = [
   ['home', 'Home'],
+  ['background', 'Background'],
   ['stories', 'Stories'],
   ['themes', 'Themes'],
-  ['background', 'Background'],
   ['method', 'Method'],
   ['about', 'About'],
 ];
