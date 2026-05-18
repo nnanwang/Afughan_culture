@@ -3,7 +3,7 @@ import { stories } from '../data/stories.js';
 import { getThemeClass } from '../utils/themeClasses.js';
 
 export default function StoryDetail({ story, onBack, onStorySelect }) {
-  const related = stories.filter((item) => item.theme === story.theme && item.id !== story.id).slice(0, 3);
+  const related = stories.filter((item) => item.theme === story.theme && item.id !== story.id).slice(0, 6);
 
   return (
     <article className={`story-detail-page ${getThemeClass(story.theme)}`}>

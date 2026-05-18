@@ -13,7 +13,7 @@ export default function Themes({ onStorySelect }) {
       </div>
       <div className="theme-panels">
         {themes.slice(1).map((theme, index) => {
-          const related = stories.filter((story) => story.theme === theme.id).slice(0, 3);
+          const related = stories.filter((story) => story.theme === theme.id);
           return (
             <section className={`theme-panel ${themeColorClasses[index + 1]}`} key={theme.id}>
               <div className="theme-panel-left">
