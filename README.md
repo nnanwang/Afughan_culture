@@ -4,6 +4,7 @@ Between Care and Uncertainty is a React + Vite storytelling and research website
 
 The site is designed for community members, researchers, public health practitioners, educators, and anyone interested in how health decisions are made in real life rather than only in clinical or policy terms.
 
+link: https://afughan-culture.vercel.app/
 ## Key Features
 
 ### Home Page
